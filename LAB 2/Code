@@ -1,0 +1,34 @@
+1.Create a keyspace by name Employee 
+create keyspace employee with replication= {'class':'SimpleStrategy','replication_factor':4};
+
+
+2. Create a column family by name Employee-Info with attributes Emp_Id Primary Key, Emp_Name,Designation, Date_of_Joining, Salary,Dept_Name
+use employee;
+cqlsh:employee> create table employee_info
+            ... (Emp_Id int Primary key,
+            ... Emp_name text,
+            ... Designation text,
+            ... Date_of_Joining text,
+            ... Salary int,
+            ... Dept_name text,
+            ... age);
+
+
+3. Insert the values into the table in batch
+begin batch
+            ... insert into Employee_Info(Emp_id,Emp_name,Designation,Date_of_joining,Salary,dept_name)values (13,'Rohit pandey','manager','12-01-2021',13000,'ASE'); insert into Employee_Info(Emp_id,Emp_name,Designation,Date_of_joining,Salary,dept_name)values (13,'Rohit pandey','manager','12-01-2021',13000,'ASE'); insert into Employee_Info(Emp_id,Emp_name,Designation,Date_of_joining,Salary,dept_name)values (34,'Akash','assistant','28-08-2021',10000,'CSE'); insert into Employee_Info(Emp_id,Emp_name,Designation,Date_of_joining,Salary,dept_name)values (21,'Anisha','assistant','22-07-2021',15000,'CSE'); 
+            ... apply batch;
+
+4. Update Employee name and Department of Emp-Id 121
+
+
+
+5. Sort the details of Employee records based on salary
+
+
+6. Alter the schema of the table Employee_Info to add a column Projects which stores a set of Projects done by the corresponding Employee.
+
+
+7. Update the altered table to add project names.
+
+8.Create a TTL of 15 seconds to display the values of Employees.
