@@ -1,0 +1,32 @@
+start-all.sh
+
+jps
+
+1. mkdir
+hdfs dfs -mkdir /avni
+
+2. ls
+hadoop fs -ls /
+
+3. put
+hdfs dfs -put /home/hduser/welcome.txt /avni/hi.txt
+
+4. copyFromLocal
+hdfs dfs -copyFromLocal /home/hduser/welcome.txt /avni/hi2.txt
+
+5. get
+  i: hdfs dfs -get /avni/hi.txt /home/hduser/Downloads/WAWC.txt
+  ii: hdfs dfs -getmerge /avni/hi.txt /avni/hi2.txt /home/hduser/Desktop/Merge.txt
+  iii:hadoop fs -getfacl /anant/
+  
+6. copyToLocal
+hdfs dfs -copyToLocal /avni/hi2.txt /home/hduser/Desktop
+
+7. cat
+hdfs dfs -cat /avni/hi.txt
+
+8. mv
+hadoop fs -mv /avni /ananth
+
+9. cp
+hadoop fs -cp /anant /avni
