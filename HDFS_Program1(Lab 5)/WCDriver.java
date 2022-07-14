@@ -1,4 +1,4 @@
-package arihant;
+package ananth;
 
 import java.io.IOException;
 import org.apache.hadoop.conf.Configured;
@@ -42,3 +42,4 @@ public class WCDriver extends Configured implements Tool {
 		System.out.println(exitCode);
 	}
 }
+
